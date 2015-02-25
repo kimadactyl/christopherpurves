@@ -1,0 +1,18 @@
+@import susy
+
+$total-columns: 9
+$column-width: 4em
+$gutter-width: 1em
+$grid-padding: $gutter-width
+
+$break: 12
+
+.main
+  +container($total-columns, $break)
+  //@include susy-grid-background;
+  .main-content
+  		+span-columns(4)
+
++at-breakpoint($break)
+  .main
+    //@include susy-grid-background;

@@ -1,0 +1,35 @@
+---
+title: Repertoire
+---
+
+%h2 Repertoire
+
+%div.left-sidebar
+  %nav.submenu 
+    %ul#subnav
+
+%div.main-content.cycle-slideshow{:"data-cycle-slides" => "> div", :"data-cycle-timeout" => "0", :"data-cycle-pager" => "#subnav"}
+  - data.repertoire.each do |title, list|
+    %div.repslide{:"data-cycle-pager-template" => "<li><a href=#>" + title.split[0] + "</a></li>"}
+      %h3
+        = title
+      %table.repertoire
+        - list.each do |composer, pieces|
+          %tr
+            %td.composer
+              = composer
+            %td.piece
+              %ul
+                - pieces.each do |piece|
+                  %li
+                    %div.title #{piece.title.titleize}
+                    %div.part  #{piece.part}
+
+%div.right-sidebar
+  %div.sidebar-1
+    = image_tag("content/meist-4-brian-tarr-2010.jpg", :alt => "Photo of Christopher Purves in Meist")
+    %p.photo-credit
+      Photo Credit: Brian Tarr 2013
+  %div.sidebar-2
+    %blockquote Christopher Purves captures the suave, sardonic insinuation of Goethe’s and Berlioz’s Mephistopheles, as well as his sinister intent.
+    %cite - Hugh Canning, Sunday Times

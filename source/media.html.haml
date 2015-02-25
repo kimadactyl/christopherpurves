@@ -1,0 +1,28 @@
+---
+title: Media
+---
+
+
+%h2 Media Gallery
+
+%div.left-sidebar
+  %nav.submenu 
+    %ul#subnav
+
+%div.main-content-no-right.cycle-slideshow.media{:"data-cycle-slides" => "> div", :"data-cycle-timeout" => "0", :"data-cycle-pager" => "#subnav"}
+
+  %div{:style => "width: 100%", :"data-cycle-pager-template" => "<li><a href=#>Images</a></li>"}
+    %h3 Images 
+    = partial "gallery"  
+  
+  %div{:"data-cycle-pager-template" => "<li><a href=#>Video</a></li>"}
+    %h3 Video
+    = partial "videos"
+
+  %div{:"data-cycle-pager-template" => "<li><a href=#>Audio</a></li>"}
+    %h3 Audio
+    = partial "audioplayer"
+    
+  %div{:"data-cycle-pager-template" => "<li><a href=#>Mono_Pop</a></li>"}
+    %h3 MONO_POP
+    = partial "monopops"

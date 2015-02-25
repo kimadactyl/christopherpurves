@@ -1,0 +1,207 @@
+Operatic Repertoire:
+  Berg:
+  - title: WOZZECK
+    part: Wozzeck
+
+  Britten:
+  - title: ALBERT HERRING
+    part: "Superintendant Budd, Vicar"
+  - title: PETER GRIMES
+    part: Balstrode
+  - title: Rape of Lucretia
+    part: Collatinus
+  - title: Billy Budd
+    part: Redburn
+
+  Debussy:
+  - title: PELLEAS ET MELISANDE
+    part: Golaud
+
+  Donizetti:
+  - title: DON PASQUALE
+    part: Don Pasquale
+  - title: L'ELISIR D'AMORE
+    part: Dulcamara
+  - title: MARIA STUARDA
+    part: Cecil
+  - title: Maria di Rohan
+    part: Chevreuse
+
+  Gluck:
+  - title: IPHIGENIE EN AULIDE
+    part: Agamemnon
+
+  Handel:
+  - title: ALCINA
+    part: Melisso
+  - title: JEPHTHA
+    part: Zebul
+
+  Haydn:
+  - title: IL MONDO DELLA LUNA
+    part: Buonafede
+  - title: La Fedeltá Premiata
+    part: Melibeo
+
+  Humperdinck:
+  - title: Hänsel Und Gretel
+    part: Father
+
+  Janacek:
+  - title: CUNNING LITTLE VIXEN
+    part: Forester
+
+  Leoncavallo:
+  - title: I PAGLIACCI
+    part: Tonio
+
+  Macmillan:
+  - title: INES DE CASTRO
+    part: Executioner 
+  - title: THE SACRIFICE
+    part: General
+
+  Mozart:
+  - title: DON GIOVANNI
+    part: "Don Giovanni, Leporello"
+  - title: Die Zauberflöte
+    part: Papageno
+  - title: LE NOZZE DI FIGARO
+    part: "Figaro, Count"
+  - title: ZAIDE
+    part: Osmin
+
+  Puccini:
+  - title: La Bohème
+    part: Marcello
+  - title: GIANNI SCHICCHI
+    part: Marco
+  - title: MADAMA BUTTERFLY
+    part: Sharpless
+  - title: MANON LESCAUT
+    part: Lescaut
+  - title: TOSCA
+    part: Scarpia
+
+  Rossini:
+  - title: LA GAZZA LADRA
+    part: Podesta
+  - title: La Cenerenrola
+    part: Dandini
+
+  Schumann:
+  - title: Genoveva
+    part: Siegfried
+
+  Smetana:
+  - title: Dalibor
+    part: Budivoj
+
+  R Strauss:
+  - title: DER ROSENKAVALIER
+    part: Faninal
+
+  Stravinsky: 
+  - title: Rakes Progress
+    part: Nick Shadow
+
+  Verdi:
+  - title: FALSTAFF
+    part: "Falstaff, Ford"
+  - title: LA TRAVIATA
+    part: Germont 
+
+  Wagner:
+  - title: Die Meistersinger
+    part: Beckmesser
+
+Concert Repertoire:
+  Bach:
+  - title: ST MATTHEW PASSION
+  - title: ST JOHN PASSION
+  - title: CHRISTMAS ORATORIO
+  - title: MAGNIFICAT
+  - title: MASS IN B MINOR
+
+  Beethoven:
+  - title: MISSA SOLEMNIS
+  - title: 9th SYMPHONY
+
+  Berlioz:
+  - title: L'ENFANCE DU CHRIST
+  - title: La Damnation de Faust
+
+  Brahms:
+  - title: REQUIEM
+
+  Britten:
+  - title: WAR REQUIEM
+
+  Charpentier:
+  - title: LES LECONS TENEBRES
+
+  Dvorak:
+  - title: TE DEUM
+
+  Elgar:
+  - title: DREAM OF GERONTIUS
+  - title: THE APOSTLES
+
+  Handel:
+  - title: "ACI, GALATEA E POLIFEMO"
+  - title: Acis and Galatea
+  - title: ALEXANDER'S FEAST
+  - title: Belshazzar
+  - title: ISRAEL IN EGYPT
+  - title: JUDAS MACCABEUS
+  - title: LA RESURREZIONE
+  - title: MESSIAH
+  - title: SAUL
+  - title: SAMSON
+  - title: SUSANNA
+
+  Haydn:
+  - title: Die Jahrezeiten
+  - title: Die Schöpfung
+
+  Honneger:
+  - title: JEANNE D'ARC AU BÛCHER
+
+  Mahler:
+  - title: LIEDER EINES FAHRENDEN GESELLEN
+
+  Mendelssohn:
+  - title: ST PAUL
+  - title: Elijah
+
+  Monteverdi:
+  - title: VESPERS 1610
+
+  Mozart:
+  - title: MASS IN C
+  - title: REQUIEM
+
+  Purcell:
+  - title: FAIRY QUEEN
+  - title: HARMONIA SACRA
+  - title: KING ARTHUR
+  - title: ODE TO ST CECILIA'S DAY
+
+  Rossini:
+  - title: La Petite Messe Sollenelle
+  
+  Stravinsky:
+  - title: LES NOCES
+
+  Vaughan Williams:
+  - title: SEA SYMPHONY
+
+  Verdi:
+  - title: REQUIEM  
+
+  Walton:
+  - title: BELSHAZZAR'S FEAST
+  - title: THE BEAR
+
+  Zemlinsky:
+  - title: LYRIC SYMPHONY

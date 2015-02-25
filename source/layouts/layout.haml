@@ -1,0 +1,66 @@
+!!!5
+/[if lt IE 7] <html class="no-js lt-ie9 lt-ie8 lt-ie7">
+/[if IE 7] <html class="no-js lt-ie9 lt-ie8">
+/[if IE 8] <html class="no-js lt-ie9">
+%html.no-js
+  %head
+    %meta{:charset => "utf-8"}
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}
+    
+    -# To set titles and descriptions globally and for each individual page, see /DOCS.md
+    %title= page_title
+    %meta{:content => page_description, :name => "description"}
+    
+    %meta{:content => "width=device-width", :name => "viewport"}
+    
+    %link(href="favicon.ico" rel="shortcut icon")
+    %link(href="apple-touch-icon-57x57.png" rel="apple-touch-icon")
+    %link(href="apple-touch-icon-72x72.png" sizes="72x72" rel="apple-touch-icon")
+    %link(href="apple-touch-icon-114x114.png" sizes="114x114" rel="apple-touch-icon")
+    %link(href="apple-touch-icon-144x144.png" sizes="114x114" rel="apple-touch-icon")
+    
+    / Google Fonts
+    %link{:href => "http://fonts.googleapis.com/css?family=Cardo:400,700,400italic|Fjalla+One", 
+          :rel => 'stylesheet',
+          :type => 'text/css'}
+    / jPlayer skin
+    = stylesheet_link_tag "jplayer.pink.flag.css"
+    = javascript_include_tag "vendor/modernizr-2.6.1.min"
+    // jQuery itself
+    = javascript_include_tag "vendor/jquery-1.8.0.min.js"
+    // Cycle plugin
+    = javascript_include_tag "jquery.cycle2.min.js"
+    / Colorbox plugin
+    = javascript_include_tag "colorbox/jquery.colorbox.js"    
+    = stylesheet_link_tag "colorbox.css"
+
+    // Our styles and CSS last
+    = stylesheet_link_tag "site"
+    = javascript_include_tag "site"
+  %body
+    /[if lt IE 7] <p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p>
+    %header
+      %h1 
+        %a{:href => "/"} Christopher Purves
+      %p
+        %span{:class => "before"} &nbsp;
+        %strong Baritone
+        %span{:class => "after"} &nbsp;
+    = nav ['About', 'Schedule', 'Repertoire', 'Media', 'Discography', 'Press', 'Contact'], :class => "main"
+    %div{:role => "main", :class => "main"}= yield
+
+    %footer
+      - if ("/" == current_page.url)
+        :markdown
+          Site by [Roshana](http://designbyroshana.com) &amp; [Kim](http://alliscalm.net)
+
+    :javascript
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-38855353-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

@@ -1,0 +1,38 @@
+---
+title: Schedule
+---
+
+%h2 Schedule
+
+%div.left-sidebar
+  %nav.submenu 
+    %ul#subnav
+
+%div.main-content.schedule.cycle-slideshow{:"data-cycle-slides" => "> div", :"data-cycle-timeout" => "0", :"data-cycle-pager" => "#subnav"}
+  - year_id = 0
+  - data.schedule.each do |year, list|
+    %div{:"data-cycle-pager-template" => "<li><a href=#>" + year[0,11] + "</a></li>"}
+      %h3
+        = year + " Season"
+      - if year_id > 0
+        %h4.season-highlights Season Highlights
+      - year_id += 1
+
+      %ul
+        - list.each do |title, details|
+          %li
+            %h4 
+              = title
+            %p
+              = "<strong>Dates:</strong> " + details.dates + "<br>\n" if details.dates
+              = "<strong>Company:</strong> " + details.company + "<br>\n" if details.company
+              = "<strong>Location:</strong> " + details.location + "<br>\n" if details.location
+
+%div.right-sidebar
+  %div.sidebar-1
+    = image_tag("content/perfectam-2.jpg", :alt => "Photo of Christopher Purves in the Perfect American")
+    %p.photo-credit
+      Photo Credit: Clive Barda
+  %div.sidebar-2
+    %blockquote Christopher Purves - perfect, especially when revealing the hollow shell behind the iron fist
+    %cite - Richard Morrison, The Times (July 2012)

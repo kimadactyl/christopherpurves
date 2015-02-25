@@ -1,0 +1,36 @@
+---
+title: Home
+---
+
+%div.left-sidebar-front
+  %img{:src => "images/layout/chris.png", :alt => "A full length portrait photograph of Christopher Purves"}
+
+%div.main-content-front
+  %blockquote Christopher Purves charms, broods, fumes implacably, plots villainously and confronts his doom vividly in the manner of a Shakespearean tragedian. The incrementing fury of his secretive seething reactions to imprudent women exalting David's military successes above those of the king are compelling.
+  %cite - Gramophone Magazine, David Vickers (Oct &rsquo;12)
+
+  %div.slideshow.cycle-slideshow{:"data-cycle-slides" => "> div", :"data-cycle-timeout" => "3000", :"data-cycle-fx"=> "scrollHorz", :"data-cycle-pause-on-hover" => "true"}
+
+    / %span.cycle-pager
+    / %span.prev-next
+    /   %span.cycle-prev &lt;
+    /   %span.cycle-next &gt;
+
+    %div.slide
+      %div.highlighted
+      = image_tag "layout/handel.jpg"
+      %div.slidetext
+        %h3 Disc Of The Month
+        %p 
+          My new CD &ldquo;Handel: Finest Arias For Base Voice&rdquo; has been various organs&rsquo; disc of the month three months running.
+          %br
+          = link_to "Find out more about this on my discography page", "discography"
+
+    %div.slide
+      = image_tag "layout/monopop.jpg"
+      %div.slidetext
+        %h3 MONO_POPERA
+        %p 
+          MONO_POP are creating a mini series dedicated to promoting pieces from my new CD, &ldquo;Handel: Finest Arias For Base Voice&rdquo;.
+          %br
+          %a{:href => "http://monopop.org.uk", :target => "_blank"} Find out more on the MONO_POP website

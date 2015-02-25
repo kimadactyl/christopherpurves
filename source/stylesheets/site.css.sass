@@ -1,0 +1,541 @@
+//*
+///*HTML5 Boilerplate + Normalize
+require "_vendor/normalize.css"
+require "_vendor/html5bp.css"
+
+@import "compass/typography/vertical_rhythm"
+@import "susy"
+
+// Susy initiation
+$total-columns: 9
+$column-width: 5em
+$gutter-width: 2em
+$grid-padding: $gutter-width
+
+
+$tablet-landscape-and-above: 60em 9 // Over 1024px
+$mobile-and-above: 42em 9
+$mobile-to-tablet: 42em 9 60em
+$mobile-and-below: 9 42em
+$mobile-portrait-and-below: 9 30em
+
+//Establish baseline
+$base-font-size: 14px
+$base-line-height: 14px
++establish-baseline
+
+// Colours
+$darkgrey: #231F20
+$lightgrey: #E9EAEA
+
+// Useful mixins
+@mixin default-font
+	font-family: Cardo, Georgia, serif
+
+@mixin alt-font
+	font-family: "Fjalla One", Impact, "Arial Black", sans-serif
+
+@mixin clear-link-formatting
+	a
+		text-decoration: none
+		color: $darkgrey
+
+.main
+	+container($total-columns)
+	// +susy-grid-background
+
+	+at-breakpoint($mobile-and-below)
+		padding: 0
+
+	// Default - all takes full width
+	.left-sidebar, .main-content, .main-content-no-right, .right-sidebar
+		+span-columns(9)
+
+	// Over mobile size, do some tweaks
+	+at-breakpoint($mobile-to-tablet)
+		.left-sidebar
+			+span-columns(3)
+		.right-sidebar
+			+span-columns(9 omega)
+			.sidebar-1
+				+span-columns(4)
+			.sidebar-2
+				+span-columns(4 omega)
+		.main-content, .main-content-no-right
+			+span-columns(6 omega)
+
+	// For tablet landscape and over, use full width layout
+	+at-breakpoint($tablet-landscape-and-above)
+		// Main pages
+
+		// If it exists, left sidebar is 2
+		.left-sidebar
+			+span-columns(2, 9)	
+		.main-content-no-right + .left-sidebar
+			+span-columns(2, 9)	
+
+		// Main content width with no sidebar
+		.main-content-no-sidebars
+			+pad(1,1)
+			+span-columns(7, 9)
+		.main-content-no-left
+			+span-columns(6, 9)
+		.main-content-no-right
+			+span-columns(7 omega, 9)
+		.main-content
+			+span-columns(4, 9)
+
+		.right-sidebar
+			+span-columns(3 omega, 9)
+
+		// Front page
+		.left-sidebar-front
+			+span-columns(3,9)
+			line-height: 0
+		.main-content-front
+			+span-columns(6 omega, 9)
+	+at-breakpoint(9 60em)
+		.left-sidebar-front
+			display: none
+			+span-columns(0)
+		.main-content-front
+			+span-columns(9 omega, 9)
+			background-image: url('/images/layout/chris.png')
+			background-repeat: no-repeat
+			background-position: -20% 0
+			blockquote, cite
+				z-index: 100
+				position: relative
+				background-color: rgba(255, 255, 255, 0.5)
+				padding: 0.5em
+
+body
+	margin: 0
+	border-top: 10px solid $darkgrey
+	+adjust-font-size-to(16px)
+	font-family: Cardo, Georgia, serif
+	background-image: url('/images/layout/square-bg.png')
+	color: $darkgrey
+
+h2, h3
+	font-weight: normal
+
+h2
+	+adjust-font-size-to(40px)
+
+h3
+	+adjust-font-size-to(30px)
+	margin-top: -0.18em
+
+a
+	color: $darkgrey
+a:hover
+	text-decoration: none
+
+blockquote
+	font-style: italic
+	margin: 1em 0 0 0
+	padding: 1.5em 0 0 0 
+
+/* Padding adjustments */
+div.main-content-no-left > p, div.main-content-no-left > h4
+	margin-top: 0
+
+/* Right sidebar */
+div.right-sidebar blockquote
+	background-image: url('/images/layout/lines.png')
+	background-position: 0% 0%
+	background-repeat: repeat-x
+
+cite
+	display: block
+	font-style: normal
+	font-weight: bold
+
+div.right-sidebar cite
+	background-image: url('/images/layout/lines.png')
+	background-position: 0% 100%
+	padding-bottom: 1.5em
+	background-repeat: repeat-x
+
+div.right-sidebar p.photo-credit
+	text-align: right
+	+adjust-font-size-to(11px)
+	margin: 0
+	line-height: 0.9em
+	color: lighten($darkgrey, 25%)
+
+// Logo and tagline
+header
+	text-align: center
+	text-transform: uppercase
+	h1
+		+adjust-font-size-to(56px)
+		font-weight: normal
+		background-image: url('/images/layout/header-graphic.png')
+		background-repeat: no-repeat
+		background-position: 50% 0
+		padding-top: 1em
+		margin: 0.3em 0 0 0
+		+clear-link-formatting
+		+at-breakpoint($mobile-and-below)
+			+adjust-font-size-to(42px)
+		+at-breakpoint($mobile-portrait-and-below)
+			+adjust-font-size-to(32px)
+	p
+		margin: 0 auto
+		width: 100%
+		padding: 0
+		display: block
+		text-align: center
+		span
+			background-image: url('/images/layout/lines.png')
+			height: 10px
+			background-repeat: repeat-x
+			background-position: 0 0.2em
+			display: inline-block
+			width: 20%
+			height: 2em
+
+		strong
+			font-weight: normal
+			+adjust-font-size-to(23px)
+			+alt-font
+			display: inline-block
+			border: 10px solid transparent
+
+
+// Main site navigation
+nav.main
+	text-align: center
+	ul
+		margin: 1em 0
+		padding: 0
+		li
+			display: inline-block
+			margin: 0em 1em
+			+clear-link-formatting
+			a.active, a:hover
+				text-decoration: underline
+			+at-breakpoint($mobile-and-below)
+				background-color: rgba(0,0,0,0.03)
+				padding: 3px 15px
+				border-radius: 7px
+				margin-bottom: 0em
+				margin: 0.5em 0.25em
+
+footer
+	clear: both
+	background-color: #201C1C
+	color: white
+	text-align: right
+	p
+		+adjust-font-size-to(12px)
+		padding: 0.5em 3em
+		margin: 0
+		a
+			color: lighten($darkgrey, 50%)
+
+// Page subnavigation
++at-breakpoint($mobile-and-below)
+	.left-sidebar
+		margin-bottom: 1.5em
+nav.submenu ul
+	margin: 0
+	+at-breakpoint($mobile-and-above)
+		margin: 0 0 2em 0
+	padding: 0
+	li
+		margin: 5px 0
+		padding: 0
+		list-style-type: none
+		a
+			color: $darkgrey
+			background-color: $lightgrey
+			padding: 0.25em 0.5em
+			// text-transform: uppercase
+			+adjust-font-size-to(24px)
+			text-decoration: none
+			// Default break
+			display: inline-block
+			float: left
+			margin-bottom: 1em
+			+at-breakpoint($mobile-and-above)
+				display: block
+				float: none
+				margin-bottom: 0
+			+at-breakpoint($mobile-and-below)
+				margin: 0 5px 5px 0
+		a:active, a:hover
+			color: $lightgrey
+			background-color: $darkgrey
+	li:first-child a
+		color: $lightgrey
+		background-color: $darkgrey
+// Front page specific
+.left-sidebar-front
+	img
+		margin: 0 0 0 -2em
+		+at-breakpoint($mobile-and-below)
+		position: relative
+		z-index: 100
+.main-content-front	
+	blockquote
+		+adjust-font-size-to(18px)
+	cite
+		text-align: right
+	.slideshow a
+		color: white
+		font-weight: italic
+		+adjust-font-size-to(11px)
+		text-decoration: underline
+	h3
+		+alt-font
+		text-transform: uppercase
+
+.slideshow
+	margin-top: 3em
+	position: relative
+	z-index: 1
+	max-height: 330px
+	+at-breakpoint($mobile-and-below)
+		max-height: none
+		height: 500px
+	div.slide
+		height: 250px
+		+at-breakpoint($mobile-and-below)
+			height: 400px
+		position: relative
+		padding: 2em
+		margin-top: 5px
+		min-height: 15em
+		background-color:	$darkgrey
+		color: white
+		width: 90%
+		z-index: 1
+		div.slidetext
+			display: inline-block
+			float: left
+			width: 58%
+			+at-breakpoint($mobile-and-below)
+				width: 100%
+		img
+			display: inline-block
+			float: left
+			width: 34%
+			+at-breakpoint($mobile-and-below)
+				width: 200px
+				margin-bottom: 1em
+			margin-right: 2em
+			border: 2px solid white
+		h3
+			margin-top: 0
+			margin-right: 1em
+		p
+			font-style: italic
+		div.highlighted
+			background-image: url('/images/layout/star.png')
+			position: absolute
+			height: 91px
+			width: 49px
+			right: 15px
+			top: -7px
+			z-index: 100
+	span.cycle-pager
+		position: absolute
+		bottom: 0.3em
+		right: 0.5em
+		display: block
+		z-index: 100
+		font-size: 3em
+	span.cycle-pager:hover
+		cursor: hand
+		cursor: pointer
+	span.prev-next
+		position: absolute
+		bottom: 1.75em
+		right: 0.5em
+		font-size: 3em
+		color: white
+		z-index: 100
+		font-weight: bold
+		span.prev, span.next
+			z-index: 200
+
+// Rest of site specific
+.right-sidebar
+	img
+		width: 100%
+	blockquote
+		+adjust-font-size-to(20px)
+		text-align: center
+	cite
+		text-align: center
+
+// Media
+h4
+	+adjust-font-size-to(18px)
+	margin-bottom: 0em
+p
+	margin: 0 0  0.25em 0
+
+iframe + h4
+	margin-top: 2em	
+
+// Media -> Gallery
+ul.gallery
+	display: none
+	width: 100%
+	margin: 0
+	padding: 0
+	li
+		list-style-type: none
+		padding: 0
+		margin:	0
+		float: left
+		img
+			margin: 0 8px 0px 0
+		a
+			padding: 0
+			margin: 0
+			border: 0
+
+.cycle-slide
+	width: 100%
+	iframe
+
+#audioplayer
+	float: left
+	display: none
+	div.jp-audio
+		+default-font
+#description
+	margin-left: 243px + 30px // Actual width + gutter width
+	h3, h4
+		+adjust-font-size-to(24px)
+		+default-font
+		margin: 0 0 0.25em 0
+	h3
+		text-transform: capitalize
+		font-style: italic
+	p
+		+adjust-font-size-to(16px)
++at-breakpoint($mobile-and-below)
+	#audioplayer, #description
+		float: none
+		margin: 0 0 1em
+
+// Repertoire
+div.repslide.cycle-slide
+	width: 100% 
+
+table.repertoire
+	text-transform: capitalize
+	border-spacing: 0 1em
+	width: 100%
+	margin-top: -1em
+	td
+		vertical-align: top
+		ul
+			margin: 0
+			padding: 0
+			li
+				list-style-type: none
+				margin: 0
+				padding: 0
+				clear: both
+				div
+					float: left
+					width: 49%
+				div.title
+					margin-right: 2%
+
+	td.composer
+		font-weight: bold
+		width: 30%
+	td.piece
+		width: 70%
+		font-style: italic
+		div.part
+			font-style: normal
+
+// Schedule
+div.schedule
+	h4.season-highlights
+		font-style: italic
+		font-weight: normal
+		+adjust-font-size-to(22px)
+	ul
+		margin: 0
+		padding: 0
+		li
+			list-style-type: none
+			margin: 0 0 2em
+			padding: 0
+			h4
+				text-transform: uppercase
+				+adjust-font-size-to(16px)
+			p
+				font-style: italic
+				strong
+					font-style: normal
+
+// Press
+ul#press
+	margin: 0
+	padding: 0
+	li
+		margin: 0 0 2em 0
+		padding: 0
+		list-style-type: none
+		text-align: center
+		h3
+			+default-font
+			font-weight: bold
+			text-transform: capitalize
+			+adjust-font-size-to(18px)
+		blockquote
+			font-style: italic
+			+adjust-font-size-to(16px)
+			margin-bottom: 1em
+		cite
+			text-align: right
+	hr
+		border-width: 1px 0 3px 0
+		height: 2px
+		width: 70%
+		border-color: $darkgrey
+		margin-bottom: 2em
+
+// Discography
+ul#discography
+	margin: 0
+	padding: 0
+	li
+		margin: 0 0 2em 0
+		padding: 0
+		list-style-type: none	
+		+span-columns(9 omega)
+		img, div.record
+			+span-columns(9)
+		img
+			width: auto
+			margin: 5px 0 1em 0
+		+at-breakpoint($mobile-and-above)
+			img
+				+span-columns(2)
+			div.record
+				+span-columns(6 omega)
+				+post(1)
+		h3
+			+default-font
+			text-transform: capitalize
+			+adjust-font-size-to(18px)
+			span.format
+				+adjust-font-size-to(10px)
+		p.label
+			text-transform: uppercase
+			+adjust-font-size-to(11px)
+			line-height: 1.25em
+			a
+				text-transform: none

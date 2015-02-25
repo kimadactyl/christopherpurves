@@ -1,0 +1,27 @@
+---
+title: Press
+---
+
+%h2 Press
+
+%div.left-sidebar
+  %nav.submenu 
+    %ul#subnav
+
+%div.main-content-no-right.press.cycle-slideshow{:"data-cycle-slides" => "> div", :"data-cycle-timeout" => "0", :"data-cycle-pager" => "#subnav"}
+  - data.press.each do |category, list|
+    %div{:"data-cycle-pager-template" => "<li><a href=#>" + category + "</a></li>"}
+      %h3
+        = category + " Reviews"
+
+      %ul#press
+        - list.each do |title, clippings|
+          %li
+            %h3 
+              = title
+            - clippings.each do |clipping|
+              %blockquote
+                = "&ldquo;" + clipping.quote + "&rdquo;"
+              %cite
+                = "&mdash; " + clipping.source
+          %hr

@@ -1,0 +1,23 @@
+---
+title: Discography
+---
+%h2 Discography
+
+%ul#discography
+  - data.discography.each do |info|
+    %li
+      - if info.image
+        = image_tag('discography/' + info.image)
+      %div.record
+        %h3
+          = info.composer + " &mdash; "
+          %em
+            = info.piece.titleize
+          - if info.format
+            %span.format #{info.format}
+        %p.description
+          = info.desc
+        %p.label
+          = info.label + " (" + info.year.to_s + ") <br>"
+          = link_to "Buy on Amazon", info.amazon
+

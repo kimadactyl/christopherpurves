@@ -1,0 +1,25 @@
+= javascript_include_tag "jquery.masonry.min.js"
+:javascript
+  jQuery(document).ready(function(){
+    $('p.no-js').css('display', 'none');
+    $('.gallery a').colorbox({rel:'box'});
+
+    var $container = $('.gallery');
+
+    $container.imagesLoaded( function(){
+      $container.masonry({
+        itemSelector : '.box'
+      });
+    });
+    $('ul.gallery').css('display', 'block');
+  });
+
+%p.no-js
+  Sorry, you need Javascript enabled to see this page properly!
+
+%ul.gallery#colorbox
+  - Dir.foreach('source/images/content/') do |item| 
+    - next if item == '.' or item == '..' 
+    - if File.extname(item) == ".jpg"
+      %li
+        = link_to(image_tag("content/thumbs/" + item), "images/content/" + item, :class => "box")
